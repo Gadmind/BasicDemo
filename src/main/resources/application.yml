@@ -4,10 +4,8 @@ server:
   servlet:
     context-path: /
 spring:
-  config:
-    name: dev
-  # 选择环境
-  #    name: @activatedProperties@
+  profiles:
+    active: @activatedProperties@
   # 配置数据库连接池
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource
@@ -64,7 +62,7 @@ spring:
 # MyBatis-Plus
 mybatis-plus:
   # xml 路径
-  mapper-locations: classpath:mapping/*Mapper.xml
+  mapper-locations: classpath:mapper/*Mapper.xml
 
 # 配置swagger
 swagger:
